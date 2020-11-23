@@ -17,3 +17,9 @@ const getUsersWithGender = (users, gender) => {
   return users.filter(({ gender: userGender }) => userGender === gender).map(({ name }) => name);
 };
 console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
+
+const getInactiveUsers = users => {
+  return users.filter(({ isActive }) => !isActive);
+};
+
+console.log(getInactiveUsers(users)); // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
