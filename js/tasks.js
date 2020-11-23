@@ -44,6 +44,12 @@ console.log(calculateTotalBalance(users)); // 20916
 const getUsersWithFriend = (users, friendName) => {
   return users.filter(({ friends }) => friends.includes(friendName)).map(({ name }) => name);
 };
-
 console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
 console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
+
+const sortByFriendsNumber = (a, b) => a.friends.length - b.friends.length;
+const getNamesSortedByFriendsCount = users => {
+  return users.sort(sortByFriendsNumber).map(({ name }) => name);
+};
+console.log(getNamesSortedByFriendsCount(users));
+// [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
