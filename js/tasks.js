@@ -3,7 +3,12 @@ import { default as users } from './users.js';
 console.log(users);
 
 const getUserNames = users => {
-  return users.map(user => user.name);
+  return users.map(({ name }) => name);
 };
 console.log(getUserNames(users));
 // [ 'Moore Hensley', 'Sharlene Bush', 'Ross Vazquez', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony' ]
+
+const getUsersWithEyeColor = (users, color) => {
+  return users.filter(({ eyeColor }) => eyeColor === color);
+};
+console.log(getUsersWithEyeColor(users, 'blue')); // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
